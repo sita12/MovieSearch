@@ -1,0 +1,17 @@
+<% if  @movie.poster != nil  %>
+                                      
+   <%= image_tag("https://image.tmdb.org/t/p/w185#{@movie.poster}") %>                                   
+<% else %>
+   <%= image_tag("no.jpg") %>
+                            
+<% end %>
+<h2 style="color:red"> Title: </h2>
+<h4> <%= @movie.title %> </h4>
+<h2 style="color:red"> Overview: </h2>
+<h4> <%= @movie.plot %> </h4>
+<h2 style="color:red"> Realese Date: </h2>
+<h4> <%= @movie.release_date %> </h4>
+<h2 style="color:red"> Language: </h2>
+<h4> <%= @movie.language %> </h4>
+<h2 style="color:red"> Budget: </h2>
+<h4> <%= @movie.budget %> </h4>

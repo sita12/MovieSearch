@@ -1,0 +1,44 @@
+  <% @user.each do |u|  %>
+                       
+                    
+                            <% u.reviews.map(&:moviee).uniq.each do |rev| %>
+                            <div class="box panel panel-default pull-left">
+                            <div class="panel-body">
+                           
+                            
+                            <!-- <h3 style="color:green"> <%= u.username %> </h3> -->
+                            
+                              <% if  rev.poster != nil  %>
+                                      
+                                  
+                                      <%= image_tag("https://image.tmdb.org/t/p/w185#{rev.poster}") %>
+                                      <h3 style="color:red"> <%= rev.title %> </h3>
+                                      <% else %>
+                                      <%= image_tag("no.jpg") %>
+                                      <h3 style="color:red"> <%= rev.moviee.title %> </h3>
+                                      <% end %>
+                                      <% @review.each do |r| %>
+                                      <% if rev.id == r.moviee.id %>
+                                     <h4>  <%= r.coment %> </h4>
+                                     <h6 style="color:blue"> commented by - <%= r.user.username %> </h6>
+                                      <% end %>
+                                      <% end %>
+                                       <%= link_to 'Edit Post', edit_moviee_path(rev.id) %>
+                                       <%= link_to 'Delete', moviee_path(rev), method: :delete, class: 'btn btn-sm btn-danger', data: {confirm: "Are you sure?"} %>
+                                       <%= link_to 'View', moviee_path(rev.id), class: 'btn btn-small btn-warning' %>
+                                       </div>
+                                       </div>
+                            <% end %>
+                            
+<% end %>
+
+
+
+
+
+
+
+
+
+
+  

@@ -1,0 +1,9 @@
+<h1>Edit Movie</h1>
+<%= simple_form_for @movie do |f| %>
+  <%= f.input :title %>
+  <%= f.input :plot, label: 'Overview' %>
+  <%= f.input :release_date %>
+  <%= f.input :language %>
+  <%= f.input :budget %>
+  <%= f.submit 'Update', class: 'btn btn-default btn-block btn-primary' %>
+<% end %>
