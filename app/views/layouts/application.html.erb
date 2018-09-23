@@ -14,7 +14,7 @@
     		<% if user_signed_in? %>
             <nav class="navbar navbar-default">
               <div class="container-fluid">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
                 
                   <li class="active"><%= link_to 'Movie Search', root_path  %></li>  
                   <li ><%= link_to 'Reviewed Movie', reviewed_path %> </li>
@@ -28,16 +28,14 @@
         <% else %>
             <nav class="navbar navbar-default">
               <div class="container-fluid">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav navbar-right">
               	    <li> <%= link_to 'Sign Up', new_user_registration_path %> </li>
 				            <li> <%= link_to 'Log In', new_user_session_path %> </li>
                 </ul>
               </div>
             </nav>
-        <% end %>
-			
+        <% end %>	
 		<%= render 'shared/flash_messages' %>
-
-    <%= yield %>
+    <%= yield %>   
   </body>
 </html>

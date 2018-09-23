@@ -43,7 +43,7 @@ function displayMovies(data){
     data["results"].forEach(function(movie){
       htmlString += `
       <img src=${movie["poster_path"] == null ? "/assets/no.jpg" : imageUrl + "/" + movie["poster_path"]} data-id="${movie['id']}" class="movie_poster"/>
-                      <h6 style="color:green"> (*** Click image to give rating ***) </h6>
+                      <h6 style="color:red"> (*** Click image to give review ***) </h6>
                      <p>${movie["title"]}</p>
                      <p>${movie["overview"]}</p>`;
     });
@@ -81,7 +81,7 @@ function displayMovies(data){
             <form id="rating-form" action="/reviews" method="POST">
               <input type="hidden" name="authenticity_token" value=${window._token} />
               <input type="hidden" name="tmdb_id" value=${movie["id"]} />
-              <textarea name= "review[coment]" class="form-control" placeholder="Your review in 140 characters"/>
+              <textarea name= "review[coment]" class="form-control" placeholder="Comment"/>
               <br />
               <input type="submit" class="btn btn-success pull-right" />
             </form>
